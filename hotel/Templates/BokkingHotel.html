@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hotal Booking</title>
+
+  {% load static %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href={% static 'mystyle.css' %}>
+</head>
+<body>
+      <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img src="{% static 'logo.jpg'%}"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="http://127.0.0.1:5500/hotel/Fb.html">Join Facebook
+
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://contextgallery.com/shop/furniture/bedroom">Bedroom</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+
+
+
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" harf="http://127.0.0.1:5500/hotel/Rough.html">page</a></li>
+                  <li><a class="dropdown-item" href="#">Another link</a></li>
+                  <li><a class="dropdown-item" href="#">A third link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <button onclick="document.location='website.html'" class="btn btn-warning">Log In </button>
+          <!-- <button onclick="document.location='default.asp'">HTML Tutorial</button> -->
+        </div>
+      </nav>
+       <div class="container-fluid">
+      <div class="row"> 
+        <div class="col-sm-12 "><img src="{% static 'Kit.jpg'%}" alt="Kit"  width="100%" height="300px"></div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4"><img style="width: 1500px; height:700px;" src="{% static 'bg_3.jpg'%}"></div>
+        <div class="col-sm-5 bg-s uccess">
+
+
+      <div class="vsjformdiv">
+        <form method="POST" class="vsjform">
+          {% csrf_token %}
+          <h1>Booking & contact</h1>
+    
+          <div class="vsjdiv">
+            <input type="text" class="vsjinput" id="street" placeholder="vsj" value="{{name}}" name="name">
+            <label for="" class="vsjlabel">Name</label>
+          </div>
+    
+
+          <div class="vsjdiv">
+            <input type="text" class="vsjinput" placeholder="vsj" name="email">
+            <label for="" class="vsjlabel">Email</label>
+          </div>
+    
+    
+          <!-- <div class="controls">
+            <input type="tel" id="phone" class="floatLabel" name="phone">
+            <label for="phone">Phone</label>
+          </div> -->
+          <div class="vsjdiv">
+            <input type="tel" id="phone" class="vsjinput"  placeholder="number" name="phone">
+            <label for="Phone" class="vsjlabel">Phone</label>
+          </div>
+    
+          <!-- <div class="grid">
+            <div class="controls">
+              <input type="text" id="city" class="floatLabel" name="city">
+              <label for="city">City</label>
+            </div>   
+            </div> -->
+    
+          <div class="vsjdiv">
+            <input type="text" class="vsjinput" id="city"  placeholder="City" name="city">
+            <label for="City" class="vsjlabel">City</label>
+          </div>
+    
+          <!-- <div class="controls">
+            <input type="text" id="post-code" class="floatLabel" name="post-code">
+            <label for="post-code">Post Code</label>
+          </div>   -->
+    
+          <div class="vsjdiv">
+            <input type="text" class="vsjinput" id="post-code"  placeholder="post-code" name="postcode">
+            <label for="City" class="vsjlabel">post-code</label>
+          </div>
+    
+          <!-- <div class="controls">
+            <input type="text" id="country" class="floatLabel" name="country">
+            <label for="country">Country</label>
+          </div> -->
+    
+          <div class="vsjdiv">
+            <input type="text" class="vsjinput" id="country" placeholder="a" name="country">
+            <label for="" class="vsjlabel">Country</label>
+          </div>
+    
+          <!-- <div class="controls">
+            <textarea name="comments" class="floatLabel" id="comments"></textarea>
+            <label for="comments">Comments</label>
+            </div> -->
+
+            <div class="vsjdiv">
+              <select class="vsjinput" name="people">
+                <option value="blank"></option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+              <label for="" class="vsjlabel">&nbsp;&nbsp;People</label>
+            </div> 
+              <div class="vsjdiv">
+                <select class="vsjinput" name="room">
+                  <option value="blank"></option>
+                  <option value="deluxe">With Bathroom</option>
+                  <option value="Zuri-zimmer">Without Bathroom</option>
+                </select>
+                <label for="" class="vsjlabel">&nbsp;&nbsp;Room</label>
+               </div>     
+    
+          <div class="vsjdiv">
+            <select class="vsjinput" name="bedding">
+              <option value="blank"></option>
+              <option value="single-bed">Zweibett</option>
+              <option value="double-bed">Doppelbett</option>
+            </select> 
+            <label for="" class="vsjlabel">Bedding</label>
+           </div>     
+    
+              <div class="vsjdiv">
+                <input type="date" id="arrive" class="vsjinput" name="arrive" value="<?php echo date('Y-m-d'); ?>">
+                <label for="" class="vsjlabel">&nbsp;&nbsp;Arrive</label>
+              </div> 
+    
+    
+              <div class="vsjdiv">
+                <input type="date" id="depart" class="vsjinput" name="depart" value="<?php echo date('Y-m-d'); ?>"/>
+                <label for="" class="vsjlabel">&nbsp;&nbsp;Depart</label>
+              </div>
+    
+    
+              <!-- <div class="vsjdiv">
+                <p class="vsjlabel">Please describe your needs e.g. Extra beds, children's cots</p>
+                <br> -->
+              <div class="vsjdiv">
+                <textarea class="vsjinput" id="comments" placeholder="comment" name="comment"></textarea>
+                <label for="" class="vsjlabel">Comments</label>
+              </div>
+    
+          <input type="submit" class="vsjsubmit" type="submit" value="submit" name="cmd">
+        </form>
+    </div>
+  </div>
+
+
+</body>
+</html>

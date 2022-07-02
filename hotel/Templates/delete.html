@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    {% load static %}
+  <title>Bootstrap 5 Website Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+      <nav class="navbar navbar-expand-sm">
+                  <div class="container-fluid">
+                               <a class="navbar-brand" href="#"><img src="{% static 'logo.jpg'%}"></a>
+
+                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+                                 <span class="navbar-toggler-icon"></span>
+                                 </button>
+                       <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                             <ul class="navbar-nav">
+                              <li class="nav-item">
+                                <a class="nav-link" href="http://127.0.0.1:5500/hotel/Fb.html">Join Facebook
+                                 </a>
+                              </li>
+
+
+                               <li class="nav-item">
+                               <a class="nav-link" href="https://contextgallery.com/shop/furniture/bedroom">Bedroom</a>
+                               </li>
+
+
+                               <li class="nav-item">
+                               <a class="nav-link" href="#">Link</a>
+                               </li>
+
+                            <li class="nav-item dropdown">
+                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Dropdown</a>
+                                <ul class="dropdown-menu">
+                                   <li><a class="dropdown-item" harf="http://127.0.0.1:5500/hotel/Rough.html">page</a></li>
+                                   <li><a class="dropdown-item" href="#">Another link</a></li>
+                                   <li><a class="dropdown-item" href="#">A third link</a></li>
+                                </ul>
+                             </li>
+                        </div>
+
+                      <button onclick="document.location='website.html'" class="btn btn-warning">Log In </button>
+                  </div>
+              </nav>
+
+       <div class="container-fluid">
+              <div class="row"> 
+                  <div class="col-sm-12 ">
+
+                       <img src="{% static 'Kit.jpg'%}" alt="Kit"  width="100%" height="300px">   
+                       <h2>{{result}}</h2>
+                  </div>
+              </div>
+        </div>
+
+
+
+<div class="row" >
+      <div class="col-sm-4">
+        
+      <img style="width: 1500px; height:700px;" src="{% static 'bg_3.jpg'%}"></div>
+
+      <div class="col-sm-5">
+
+        <div class="card bg-light mb-3" style="max-width: 18rem;">
+          <div class="card-header"><h1 class="title">** Delete **  </h1></div>
+
+
+        <form>
+          <div class="card-body">
+
+            <input type="text" value="{{categoryname}}" id="street" placeholder="Category_Name" name="category_name">
+            <label>Category Name</label>
+
+            <input type="text"  value="{{charge}}" id="street" placeholder="charge" name="charge">
+             <label> Required Charge</label>
+
+            <textarea placeholder="comment" name="discription">"{{description}}"</textarea>
+            <label>Discription Other Requirements</label>
+
+             <input type="submit" value="Submit">
+          </div>
+        </form>
+
+
+</div>
+
+</body>
+</html>
