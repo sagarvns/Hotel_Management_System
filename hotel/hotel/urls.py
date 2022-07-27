@@ -23,11 +23,24 @@ from.import views
 
 
 urlpatterns = [
+    
     path('admin/', admin.site.urls),
     path('index', views.index),
     path('login/', views.login),
     
     
+    path('list/', views.list),
+    
+    path('roombook/', views.roombook),
+    
+
+    
+    
+    path('loginpage/', views.loginpage),
+    
+    path('page/', views.page),
+    
+    path('rough/',views.rough),
     path('book/', views.book),
     path('update_booking/', views.update_booking),
     path('edit_booking/', views.edit_booking),

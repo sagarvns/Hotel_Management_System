@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+    padding: 100px 25px;
+  }
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+    background-color: #f6f6f6;
+  }
+  .logo {
+    font-size: 200px;
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>Company</h1> 
+  <p>We specialize in blablabla</p> 
+  <form class="form-inline">
+    <div class="input-group">
+      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+      <div class="input-group-btn">
+        <button type="button" class="btn btn-danger">Subscribe</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<!-- Container (About Section) -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>About Company Page</h2>
+      <h4>Lorem ipsum..</h4>      
+      <p>Lorem ipsum..</p>
+      <button class="btn btn-default btn-lg">Get in Touch</button>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2>
+      <h4><strong>MISSION:</strong> Our mission lorem ipsum..</h4>      
+      <p><strong>VISION:</strong> Our vision Lorem ipsum..</p>
+
+
+
+      <div class="sales-boxes">
+        <div class="recent-sales box">
+          <div class="title">Rooms</div>
+          <table class="table table-striped">
+
+            <form >
+              <div class="card-body">
+    
+            <tr>    
+    <td> Room No </td>
+    <td>Floar No</td>
+    <td>No-Bads</td>
+    <td>Comment</td>
+    <td>Booking</td>
+
+    </tr>
+    
+    
+{% for item in result %}
+<td></td><td></td>
+<tr>
+    
+    <td>{{item.room_no}}</td>
+    <td>{{item.floar_no}}</td>
+    <td>{{item.no_bads}}</td> 
+    <td>{{item.comment}}</td>
+    <td>
+        <a href="http://127.0.0.1:777/book/"  >
+            <button type="button" class="btn btn-primary">Book</button>
+         </a> 
+        </td>
+
+
+    
+</tr>
+    
+    {% comment %} <td><a target="new" href="/editroom?room_no={{item.room_id}}">Edit</a>
+    <td> <a target="new" href="/rooms?categoryno={{item.category_no}}">insert</td><td>
+     {% endcomment %}
+     
+    {% comment %} <td><button type="button" class="btn btn-primary"> Book </button> {% endcomment %}
+        <td>
+    </td>
+    
+    </tr>    
+    </tr>
+    {% endfor %}
+    </tr>
+              </div>
+    
+            </form>
+          </table>
+          {% comment %} <div class="button">
+            <a href="/editcategory">See All</a>
+          </div> {% endcomment %}
+        </div>
+    </div>
+
+
+          
+      
+
+</body>
+</html>
+
+
+
+
+
+
+{% comment %} <div class="sales-boxes">
+    <div class="recent-sales box">
+      <div class="title">Rooms</div>
+      <table>
+        <form >
+          <div class="card-body">
+
+            
+{% for x in names %}
+<td>{{x}}</td>
+{% endfor %}
+<td>Edit</td>
+<td>Insert </td>
+</tr>
+
+
+
+{% for item in result %}
+<tr>
+{% for x in item %}
+<td>{{x}}</td>
+{% endfor %}
+
+<td><a target="new" href="/editroom?room_no={{item.room_id}}">Edit</a>
+<td> <a target="new" href="/rooms?categoryno={{item.category_no}}">insert</td><td>
+
+<td> <a target="new" href="/allroom?categoryno={{item.category_no}}">Category</td><td>
+</td>
+
+</tr>    
+</tr>
+{% endfor %}
+</tr>
+          </div>
+
+        </form>
+      </table>
+      <div class="button">
+        <a href="/editcategory">See All </a>
+      </div>
+    </div>
+</div> {% endcomment %}
+
+
+      
+

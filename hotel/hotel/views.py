@@ -2,7 +2,41 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from sqlalchemy import create_engine
 
+def list(request):
+     categoryno=""
+     if request.GET:
+        categoryno = request.GET["categoryno"]
+     sqlEngine = create_engine('mysql+pymysql://root:@127.0.0.1/hotelbook')
+     result=sqlEngine.execute("SELECT * FROM `rooms` WHERE room_category='{0}'".format(categoryno))
+     
+     names = result.keys()
+     return render(request, "listbook.html",
+                  {'result': result,'names':names})
 
+def roombook(request):
+     
+     sqlEngine = create_engine('mysql+pymysql://root:@127.0.0.1/hotelbook')
+     result=sqlEngine.execute("SELECT category_no,category_name,description,charge  FROM `room_category`")
+     #result=list(result)
+     names = result.keys()
+     return render(request, "Room_booking.html",
+                  {'result': result,'names':names})
+      
+def page(request):
+    return render(request, "Page.html")
+
+def loginpage (request):
+    username = request.POST['username']
+    password = request.POST['password']
+    user = authenticate(username=username, password=password)
+    if user is not None:
+        if user.is_active:
+            login(user)
+            return render(request, 'rough.html', {})
+        else:
+            return render(request, 'rough.html', {'message':'the acount is not active'})
+    else:
+        return render(request, 'rough.html', {'message':'username and password is incorrect'})
 
 
 def all_checkout(request):
@@ -449,6 +483,9 @@ def login(request):
 
 def index(request):
     return render(request, "form.html")
+
+def rough(request):
+    return render(request, "rough.html")
 
 
 
