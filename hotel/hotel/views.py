@@ -485,7 +485,7 @@ def index(request):
     return render(request, "form.html")
 
 def rough(request):
-    return render(request, "rough.html")
+    return render(request, "Start_Hotel_1.html")
 
 
 

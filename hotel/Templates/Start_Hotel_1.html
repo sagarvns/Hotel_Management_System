@@ -159,14 +159,17 @@
                         </li>
 
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Watsap</a>
+                        <a class="nav-link" href="http://127.0.0.1:8000/page/">Checke Available</a>
                         </li>
 
 
                         <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Category Available Room </a>
+                        <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown">Room </a>
                                 
-                        
+                        <div>
+                          <a href="http://127.0.0.1:8000/page/">
+                            <button type="submit"> Room Available</button> </a>
+                        </div>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Delux</a></li>
                                 <li><a class="dropdown-item" href="#">Singal</a></li>
@@ -355,19 +358,20 @@
                                           </li>
                                     </ul>
 
-                                   <hr class="d-sm-none">             
-               
+                                   <hr class="d-sm-none">   
                      </div><!--77 End-->
 
 
       <div class="col-sm-4">
-
         <div class="vsjformdiv">
           <form action="" class="vsjform">
 
 
 
             <h1 class="title">Booking & contact</h1>
+
+            {% comment %} <input type="submit" class="vsjsubmit"> {% endcomment %}
+
             <div class="vsjdiv">
               <input type="text" class="vsjinput" id="street" placeholder="vsj">
               <label for="" class="vsjlabel">Name</label>
