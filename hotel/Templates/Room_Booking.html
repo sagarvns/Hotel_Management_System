@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        {% load static %}
+
   <!-- Theme Made By www.w3schools.com - No Copyright -->
-  <title>Bootstrap Theme Company Page</title>
+  <title>The Star Hotel</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-  .jumbotron {
+  {% comment %} .jumbotron {
     background-color: #f4511e;
     color: #fff;
     padding: 100px 25px;
-  }
+  } {% endcomment %}
   .container-fluid {
     padding: 60px 50px;
   }
@@ -33,14 +35,28 @@
 </head>
 <body>
 
-<div class="jumbotron text-center">
-  <h1>Company</h1> 
-  <p>We specialize in blablabla</p> 
+<nav class="navbar navbar-expand-sm "><!--Start 1-->
+  <div class="container-fluid"><!--Start 2-->
+
+      <a class="navbar-brand" href="#"><img src="{% static 'logo.jpg'%}" width="200px" height="120px">
+      </a>
+      </div>
+</nav><!--End 1--> 
+
+
+
+<div class="jumbotron text-center" img src="{% static 'fullview.jpg'%}">
+  
+  <img src="{% static 'fullview.jpg'%}" alt="New York" width="1000" height="500">
+
+  <h1>The Star Hotel</h1>
+  <p>There All Category Rooms</p>
   <form class="form-inline">
     <div class="input-group">
-      <input type="email" class="form-control" size="50" placeholder="Email Address" required>
+<!--      <input type="email" class="form-control" size="50" placeholder="Email Address" required>-->
       <div class="input-group-btn">
-        <button type="button" class="btn btn-danger">Subscribe</button>
+
+        <button type="button" class="btn btn-danger">Available</button>
       </div>
     </div>
   </form>
@@ -50,10 +66,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-sm-8">
-      <h2>About Company Page</h2>
-      <h4>Lorem ipsum..</h4>      
-      <p>Lorem ipsum..</p>
-      <button class="btn btn-default btn-lg">Get in Touch</button>
+      <h2>About Company Hotel Page</h2>
+      <h4>Delux...</h4>
+        <h4>Singal...</h4>
+      <h4>Duble...</h4>
+      <h4>Tripal...</h4>
+      <h4>King...</h4>
+      <h4>VIP...</h4>
+
+<!--      <p>Lorem ipsum...</p>-->
+      <button class="btn btn-default btn-lg">Checked Rooms</button>
     </div>
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-signal logo"></span>
